@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <title>سلة المشتريات</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        direction: rtl;
+        background: #f9f9f9;
+      }
+      .cart-container {
+        max-width: 600px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 24px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px #ccc;
+      }
+      h1 {
+        text-align: center;
+      }
+      .cart-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+      }
+      .cart-total {
+        text-align: left;
+        font-weight: bold;
+        margin-top: 24px;
+      }
+      .empty {
+        text-align: center;
+        color: #888;
+        margin: 40px 0;
+      }
+      button {
+        margin-top: 12px;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        background: #007bff;
+        color: #fff;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cart-container">
+      <h1>سلة المشتريات</h1>
+      <div id="cart-items"></div>
+      <div id="cart-total"></div>
+      <button
+        onclick="window.location.href='index.html'"
+        style="margin-top: 24px; width: 100%"
+      >
+        العودة إلى الصفحة الرئيسية
+      </button>
+      <button
+        id="empty-cart"
+        style="margin-top: 16px; width: 100%; background: #dc3545"
+      >
+        إفراغ السلة
+      </button>
+    </div>
+    <script>
+      // عرض محتوى السلة من localStorage
+      const cartItemsDiv = document.getElementById("cart-items");
+      const cartTotalDiv = document.getElementById("cart-total");
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      if (cart.length === 0) {
+        cartItemsDiv.innerHTML = '<div class="empty">السلة فارغة.</div>';
+        cartTotalDiv.textContent = "";
+      } else {
+        let total = 0;
+        cartItemsDiv.innerHTML = cart
+          .map((item) => {
+            total += item.price * item.quantity;
+            return `<div class="cart-item">
+            <span>${item.name}</span>
+            <span>الكمية: ${item.quantity}</span>
+            <span>السعر: ${item.price} دج</span>
+          </div>`;
+          })
+          .join("");
+        cartTotalDiv.textContent = `المجموع: ${total} دج`;
+        cartTotalDiv.className = "cart-total";
+      }
+
+      // زر إفراغ السلة
+      document.getElementById("empty-cart").onclick = function () {
+        if (confirm("هل أنت متأكد أنك تريد إفراغ السلة؟")) {
+          localStorage.removeItem("cart");
+          location.reload();
+        }
+      };
+    </script>
+  </body>
+</html>

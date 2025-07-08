@@ -50,7 +50,11 @@
             <p>Longueur : 45-60 cm</p>
             <p>Couleur : Or</p>
           </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
+          <a href="#" class="add-to-cart" data-name="Collier" data-price="2000">
+            <img
+              src="image/online-shopping.png"
+              alt="Shopping bag icon outlined in blue with a curved handle, representing online shopping in a modern and friendly style"
+          /></a>
         </div>
       </div>
       <div class="cardes">
@@ -61,7 +65,9 @@
             <p>Longueur : 45-60 cm</p>
             <p>Couleur : Or</p>
           </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
+          <a href="#" class="add-to-cart" data-name="Collier" data-price="2000">
+            <img src="image/online-shopping.png" alt="" />
+          </a>
         </div>
       </div>
       <div class="cardes">
@@ -72,7 +78,9 @@
             <p>Longueur : 45-60 cm</p>
             <p>Couleur : Or</p>
           </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
+          <a href="#" class="add-to-cart" data-name="Collier" data-price="2000">
+            <img src="image/online-shopping.png" alt="" />
+          </a>
         </div>
       </div>
       <div class="cardes">
@@ -83,7 +91,9 @@
             <p>Longueur : 45-60 cm</p>
             <p>Couleur : Or</p>
           </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
+          <a href="#" class="add-to-cart" data-name="Collier" data-price="2000">
+            <img src="image/online-shopping.png" alt="" />
+          </a>
         </div>
       </div>
       <div class="cardes">
@@ -94,7 +104,9 @@
             <p>Longueur : 45-60 cm</p>
             <p>Couleur : Or</p>
           </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
+          <a href="#" class="add-to-cart" data-name="Collier" data-price="2000">
+            <img src="image/online-shopping.png" alt="" />
+          </a>
         </div>
       </div>
       <div class="cardes">
@@ -105,7 +117,9 @@
             <p>Longueur : 45-60 cm</p>
             <p>Couleur : Or</p>
           </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
+          <a href="#" class="add-to-cart" data-name="Collier" data-price="2000">
+            <img src="image/online-shopping.png" alt="" />
+          </a>
         </div>
       </div>
       <div class="cardes">
@@ -116,7 +130,9 @@
             <p>Longueur : 45-60 cm</p>
             <p>Couleur : Or</p>
           </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
+          <a href="#" class="add-to-cart" data-name="Collier" data-price="2000">
+            <img src="image/online-shopping.png" alt="" />
+          </a>
         </div>
       </div>
       <div class="cardes">
@@ -127,10 +143,12 @@
             <p>Longueur : 45-60 cm</p>
             <p>Couleur : Or</p>
           </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
+          <a href="#" class="add-to-cart" data-name="Collier" data-price="2000">
+            <img src="image/online-shopping.png" alt="" />
+          </a>
         </div>
       </div>
-      <div class="cardes">
+      <!-- <div class="cardes">
         <div class="img-pr"><img src="image/8.jpg" alt="" /></div>
         <div class="cardes-content">
           <div class="cardes-text">
@@ -403,6 +421,24 @@
           <a href="#"><img src="image/online-shopping.png" alt="" /></a>
         </div>
       </div>
+      -->
     </div>
+    <script src="main.js"></script>
+    <script>
+      document.querySelectorAll(".add-to-cart").forEach(function (btn) {
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          const name = this.getAttribute("data-name");
+          const price = parseInt(this.getAttribute("data-price"), 10);
+          const item = { id: name, name, price, quantity: 1 };
+
+          let cart = JSON.parse(localStorage.getItem("cart")) || [];
+          const existing = cart.find((i) => i.id === item.id);
+
+          localStorage.setItem("cart", JSON.stringify(cart));
+          window.location.href = "cart.html"; // Go to cart page after adding
+        });
+      });
+    </script>
   </body>
 </html>
