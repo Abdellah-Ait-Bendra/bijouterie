@@ -5,7 +5,10 @@ body{
 
     
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@201&display=swap');
 .section{
+     
     margin: 0px;
     padding: 0px;
     background-color: rgba(239, 239, 230, 0.938);
@@ -109,6 +112,7 @@ body{
 
 }
 .content1 p{
+     
     color: #fffefe;
     font-size: 10px;
     width: 500px;
