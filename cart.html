@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>سلة المشتريات</title>
     <style>
       body {
+        margin: 10px;
         font-family: Arial, sans-serif;
         direction: rtl;
-        background: #f9f9f9;
+        background: #f9f9f97d;
       }
       .cart-container {
-        max-width: 600px;
-        margin: 40px auto;
-        background: #fff;
-        padding: 24px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px #ccc;
+        margin: 0px;
+        background: white; /* Light beige for jewelry style */
+        padding: 32px;
+        border-radius: 25px;
+        box-shadow: 0 0px 0px #f0f09f;
+        border: 1px solid black;
       }
       h1 {
         text-align: center;
@@ -23,52 +24,82 @@
       .cart-item {
         display: flex;
         justify-content: space-between;
-        padding: 12px 0;
-        border-bottom: 1px solid #eee;
+        align-items: center;
+        padding: 18px 0;
+        border-bottom: 1px solid #e0cda9;
+        font-size: 18px;
+        color: #040403;
       }
       .cart-total {
         text-align: left;
         font-weight: bold;
-        margin-top: 24px;
+        margin-top: 32px;
+        font-size: 20px;
+        color: #0b0b0a;
       }
       .empty {
         text-align: center;
         color: #888;
-        margin: 40px 0;
+        margin: 0px 0;
       }
-      button {
-        margin-top: 12px;
+      .button {
+        margin: 0px;
         width: 100%;
         padding: 10px;
         font-size: 16px;
         border: none;
-        border-radius: 4px;
+        border-radius: 25px;
         background: #007bff;
         color: #fff;
         cursor: pointer;
       }
-      button:hover {
-        background: #0056b3;
+      .button:hover {
+        background: #0057b3c3;
+        letter-spacing: 1px;
+        transform: scale(1.02);
+        transition: 1.2s;
+      }
+
+      .button-1:hover {
+        background: #d42121;
+        letter-spacing: 1px;
+        transform: scale(1.009);
+        transition: 1.2s;
+      }
+      #empty-cart {
+        margin-top: 24px;
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+        border: none;
+        border-radius: 25px;
+        background: transparent;
+        color: #010101d6;
+        cursor: pointer;
+
+        border: 1px solid black;
+      }
+      #empty-cart:hover {
+        background: #e43d3d;
+        letter-spacing: 1px;
+        transform: scale(1.009);
+        transition: 1.2s;
       }
     </style>
   </head>
   <body>
     <div class="cart-container">
-      <h1>سلة المشتريات</h1>
+      <h1>Shopping cart</h1>
       <div id="cart-items"></div>
       <div id="cart-total"></div>
       <button
+        class="button"
         onclick="window.location.href='index.html'"
         style="margin-top: 24px; width: 100%"
       >
-        العودة إلى الصفحة الرئيسية
+        Return to the home page
       </button>
-      <button
-        id="empty-cart"
-        style="margin-top: 16px; width: 100%; background: #dc3545"
-      >
-        إفراغ السلة
-      </button>
+      <button id="empty-cart" class="button-1">Empty the basket</button>
     </div>
     <script>
       // عرض محتوى السلة من localStorage
@@ -77,7 +108,7 @@
       const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
       if (cart.length === 0) {
-        cartItemsDiv.innerHTML = '<div class="empty">السلة فارغة.</div>';
+        cartItemsDiv.innerHTML = '<div class="empty">The basket is empty</div>';
         cartTotalDiv.textContent = "";
       } else {
         let total = 0;
@@ -85,19 +116,20 @@
           .map((item) => {
             total += item.price * item.quantity;
             return `<div class="cart-item">
-            <span>${item.name}</span>
-            <span>الكمية: ${item.quantity}</span>
-            <span>السعر: ${item.price} دج</span>
-          </div>`;
+      <img src="${item.image}" alt="${item.name}" style="width:60px;height:60px;border-radius:8px;margin-left:12px;">
+      <span>${item.name}</span>
+      <span>Quantity: ${item.quantity}</span>
+      <span>the price: ${item.price} DH</span>
+    </div>`;
           })
           .join("");
-        cartTotalDiv.textContent = `المجموع: ${total} دج`;
+        cartTotalDiv.textContent = `the total: ${total} DH`;
         cartTotalDiv.className = "cart-total";
       }
 
       // زر إفراغ السلة
       document.getElementById("empty-cart").onclick = function () {
-        if (confirm("هل أنت متأكد أنك تريد إفراغ السلة؟")) {
+        if (confirm("Are you sure you want to empty the cart?")) {
           localStorage.removeItem("cart");
           location.reload();
         }

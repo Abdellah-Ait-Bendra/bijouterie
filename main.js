@@ -1,11 +1,12 @@
 // Add to cart logic for product cards
-document.querySelectorAll('.cardes a').forEach(link => {
+document.querySelectorAll('.add-to-cart').forEach(link => {
   link.addEventListener('click', function (e) {
     e.preventDefault();
     const card = this.closest('.cardes');
-    const name = card.querySelector('h1').textContent;
-    const price = 2000; // ضع السعر الصحيح هنا أو استخرجه من بيانات المنتج
-    const item = { id: name, name, price, quantity: 1 };
+    const name = this.getAttribute("data-name");
+    const price = parseInt(this.getAttribute("data-price"), 10);
+    const image = this.getAttribute("data-image");
+    const item = { id: name, name, price, image, quantity: 1 };
 
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     const existing = cart.find(i => i.id === item.id);
@@ -15,6 +16,6 @@ document.querySelectorAll('.cardes a').forEach(link => {
       cart.push(item);
     }
     localStorage.setItem('cart', JSON.stringify(cart));
-    alert('تمت إضافة المنتج إلى السلة!');
+    alert('Product added to cart!');
   });
 });
