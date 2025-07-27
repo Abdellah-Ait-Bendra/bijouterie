@@ -4,27 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>bijouterie</title>
-
-    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <section class="section">
-      <div class="header">
-        <div class="icon"><img src="image/logo1.PNG" alt="" /></div>
-        <div class="link">
-          <a href="#">contacte</a>
-          <a href="#">modeles</a>
-          .<button class="button">sing in</button>
+  <body class="m-0 bg-[#f4f4ec]">
+    <section
+      class="m-0 p-0 bg-[#efefe6] rounded-b-[25px] bg-cover bg-center bg-fixed min-h-[110vh]"
+      style="background-image: url('image/4.jpg')"
+    >
+      <div class="flex items-center justify-between">
+        <div class="ml-0">
+          <img src="image/logo1.PNG" alt="" class="w-[100px]" />
+        </div>
+        <div class="flex items-center gap-5 px-2 h-[30px]">
+          <a
+            href="#"
+            class="no-underline text-white px-2 rounded-[10px] p-1 hover:scale-110 transition duration-500 ease-in-out bg-gray-500/20"
+            >contacte</a
+          >
+          <a
+            href="#"
+            class="no-underline text-white px-2 rounded-[10px] hover:scale-110 p-1 transition duration-700 ease-in-out bg-gray-500/20"
+            >modeles</a
+          >
+          <button
+            class="text-white text-[19px] rounded-[25px] pt-0 px-5 font-light h-[35px] hover:scale-110 transition duration-700 ease-in-out bg-gray-500/20"
+            onclick="window.location.href='form.html'"
+          >
+            sing in
+          </button>
         </div>
       </div>
-
       <!--content-->
-
-      <div class="content">
-        <div class="content1">
-          <h4>Découvrez l'élégance intemporelle de nos créations.</h4>
-          <h1>Chaque bijou raconte une histoire unique.</h1>
-          <p>
+      <div class="flex justify-center items-center p-5 gap-5">
+        <div class="pt-[100px] pr-[700px] h-[100vh]">
+          <h4 class="text-gray-400 text-[20px] m-2 p-1">
+            Découvrez l'élégance intemporelle de nos créations.
+          </h4>
+          <h1 class="text-white text-[50px] m-2 p-1">
+            Chaque bijou raconte une histoire unique.
+          </h1>
+          <p class="text-white text-[10px] w-[500px] leading-[1.5] m-2 p-1">
             Bienvenue chez Bijouterie El Amal, où l'artisanat rencontre le luxe.
             Nos bijoux sont conçus avec passion, utilisant des matériaux de la
             plus haute qualité pour embellir chaque moment de votre vie. Que
@@ -32,460 +56,56 @@
             collection saura répondre à toutes vos attentes.
           </p>
         </div>
-        <div class="content-img">
-          <!-- <img src="image/accueil-boucles-scaled.jpg" alt="" />
--->
-          <div class="content-logo"></div>
-          <div class="logo"></div>
+        <div>
+          <!-- <img src="image/accueil-boucles-scaled.jpg" alt="" /> -->
+          <div></div>
+          <div></div>
         </div>
       </div>
     </section>
     <!--les modeles-->
-
-    <div class="all-cardes">
-      <div class="cardes">
-        <div class="img-pr"><img src="image/7.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a
-            href="#"
-            class="add-to-cart"
-            data-name="Collier"
-            data-price="1500"
-            data-image="image/7.jpg"
-          >
-            <img src="image/online-shopping.png" alt="" />
-          </a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/1.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Bracelet</h1>
-            <p>Longueur : 17-22 cm</p>
-            <p>Couleur : Métal</p>
-          </div>
-          <a
-            href="#"
-            class="add-to-cart"
-            data-name="Bracelet"
-            data-price="1500"
-            data-image="image/1.jpg"
-          >
-            <img src="image/online-shopping.png" alt="" />
-          </a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/2.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Bague</h1>
-            <p>Taille : Ajustable</p>
-            <p>Matériau : Or</p>
-          </div>
-          <a
-            href="#"
-            class="add-to-cart"
-            data-name="Bague"
-            data-price="1500"
-            data-image="image/2.jpg"
-          >
-            <img src="image/online-shopping.png" alt="" />
-          </a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/3.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a
-            href="#"
-            class="add-to-cart"
-            data-name="Collier"
-            data-price="1500"
-            data-image="image/3.jpg"
-          >
-            <img src="image/online-shopping.png" alt="" />
-          </a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/4.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a
-            href="#"
-            class="add-to-cart"
-            data-name="Collier"
-            data-price="1500"
-            data-image="image/4.jpg"
-          >
-            <img src="image/online-shopping.png" alt="" />
-          </a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/5.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a
-            href="#"
-            class="add-to-cart"
-            data-name="Collier"
-            data-price="1500"
-            data-image="image/5.jpg"
-          >
-            <img src="image/online-shopping.png" alt="" />
-          </a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/6.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a
-            href="#"
-            class="add-to-cart"
-            data-name="Collier"
-            data-price="1500"
-            data-image="image/6.jpg"
-          >
-            <img src="image/online-shopping.png" alt="" />
-          </a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/7.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a
-            href="#"
-            class="add-to-cart"
-            data-name="Collier"
-            data-price="1500"
-            data-image="image/7.jpg"
-          >
-            <img src="image/online-shopping.png" alt="" />
-          </a>
-        </div>
-      </div>
-      <!-- <div class="cardes">
-        <div class="img-pr"><img src="image/8.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/9.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/10.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/17.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/12.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/13.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/14.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/15.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/16.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/18.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/19.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/20.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/21.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/22.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/23.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/24.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/25.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <div class="cardes">
-            <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-          </div>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/26.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/26.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <div class="cardes">
-            <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-          </div>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/27.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/28.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/29.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr">
-          <img src="image/30.jpg" alt="" />
-        </div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-        </div>
-      </div>
-      <div class="cardes">
-        <div class="img-pr"><img src="image/31.jpg" alt="" /></div>
-        <div class="cardes-content">
-          <div class="cardes-text">
-            <h1>Collier</h1>
-            <p>Longueur : 45-60 cm</p>
-            <p>Couleur : Or</p>
-          </div>
-          <a href="#"><img src="image/online-shopping.png" alt="" /></a>
-        </div>
-      </div>
-      -->
+    <div class="flex flex-wrap bg-[#fdf5f7] p-4" id="all-cardes">
+      <!-- Cards will be injected by JS -->
     </div>
     <script src="main.js"></script>
     <script>
-      document.querySelectorAll(".add-to-cart").forEach(function (btn) {
-        btn.addEventListener("click", function (e) {
-          e.preventDefault();
-          const name = this.getAttribute("data-name");
-          const price = parseInt(this.getAttribute("data-price"), 10);
-          const item = { id: name, name, price, quantity: 1 };
+      for (i = 0; i < 36; i++) {
+        const cardes = document.createElement("div");
+        cardes.className =
+          "m-10 bg-white/100 w-[300px] rounded-[25px] h-[400px] hover:scale-105 transition-transform transition duration-1000 ease-in-out shadow-lg    hover:shadow-2xl";
+        cardes.innerHTML = `
+          <div class="w-[300px] h-[300px] rounded-t-[25px] overflow-hidden">
+            <img src="image/${
+              i + 1
+            }.jpg" alt="" class="w-full h-full object-cover" />
+          </div>
+          <div class="flex items-center gap-2 p-2">
+            <div>
+              <h1 class="text-lg font-bold">Bijou ${i + 1}</h1>
+              <p class="w-[200px]">Description du bijou ${i + 1}</p>
+            </div>
+            <a href="#" class="add-to-cart" data-name="Bijou ${
+              i + 1
+            }" data-price="${(i + 1) * 100}" data-image="image/${i + 1}.jpg">
+              <img src="image/online-shopping.png" alt="" class="w-[50px]" />
+            </a>
+          </div>`;
+        document.getElementById("all-cardes").appendChild(cardes);
+      }
+      // document.querySelectorAll(".add-to-cart").forEach(function (btn) {
+      //   btn.addEventListener("click", function (e) {
+      //     e.preventDefault();
+      //     const name = this.getAttribute("data-name");
+      //     const price = parseInt(this.getAttribute("data-price"), 10);
+      //     const item = { id: name, name, price, quantity: 1 };
 
-          let cart = JSON.parse(localStorage.getItem("cart")) || [];
-          const existing = cart.find((i) => i.id === item.id);
+      //     let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      //     const existing = cart.find((i) => i.id === item.id);
 
-          localStorage.setItem("cart", JSON.stringify(cart));
-          window.location.href = "cart.html"; // Go to cart page after adding
-        });
-      });
+      //     localStorage.setItem("cart", JSON.stringify(cart));
+      //     window.location.href = "cart.html"; // Go to cart page after adding
+      //   });
+      // });
     </script>
   </body>
 </html>

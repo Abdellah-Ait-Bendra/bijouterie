@@ -3,108 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <title>سلة المشتريات</title>
-    <style>
-      body {
-        margin: 10px;
-        font-family: Arial, sans-serif;
-        direction: rtl;
-        background: #f9f9f97d;
-      }
-      .cart-container {
-        margin: 0px;
-        background: rgba(
-          188,
-          185,
-          188,
-          0.05
-        ); /* Light beige for jewelry style */
-        padding: 32px;
-        border-radius: 25px;
-        box-shadow: 0 0px 0px #f0f09f;
-        border: 1px solid black;
-      }
-      h1 {
-        text-align: center;
-      }
-      .cart-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 18px 0;
-        border-bottom: 1px solid #e0cda9;
-        font-size: 18px;
-        color: #040403;
-      }
-      .cart-total {
-        text-align: left;
-        font-weight: bold;
-        margin-top: 32px;
-        font-size: 20px;
-        color: #0b0b0a;
-      }
-      .empty {
-        text-align: center;
-        color: #888;
-        margin: 0px 0;
-      }
-      .button {
-        margin: 0px;
-        width: 100%;
-        padding: 10px;
-        font-size: 16px;
-        border: none;
-        border-radius: 25px;
-        background: #007bff;
-        color: #fff;
-        cursor: pointer;
-      }
-      .button:hover {
-        background: #0057b3c3;
-        letter-spacing: 1px;
-        transform: scale(1.02);
-        transition: 1.2s;
-      }
-
-      .button-1:hover {
-        background: #d42121;
-        letter-spacing: 1px;
-        transform: scale(1.009);
-        transition: 1.2s;
-      }
-      #empty-cart {
-        margin-top: 24px;
-        width: 100%;
-        padding: 12px;
-        font-size: 18px;
-        border: none;
-        border-radius: 25px;
-        background: transparent;
-        color: #010101d6;
-        cursor: pointer;
-
-        border: 1px solid black;
-      }
-      #empty-cart:hover {
-        background: #e43d3d;
-        letter-spacing: 1px;
-        transform: scale(1.009);
-        transition: 1.2s;
-      }
-    </style>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <div class="cart-container">
-      <h1>Shopping cart</h1>
+  <body class="m-2 font-sans bg-[#f9f9f9] rtl">
+    <div
+      class="cart-container m-0 bg-[#bcb9bc0d] p-8 rounded-[25px] shadow-none border border-black"
+    >
+      <h1 class="text-center text-2xl font-bold mb-6">Shopping cart</h1>
       <div id="cart-items"></div>
       <div id="cart-total"></div>
       <button
-        class="button"
+        class="bg-blue-600 hover:bg-blue-800 text-white w-full py-2 px-4 rounded-[25px] text-lg mt-6 transition-all"
         onclick="window.location.href='index.html'"
-        style="margin-top: 24px; width: 100%"
       >
         Return to the home page
       </button>
-      <button id="empty-cart" class="button-1">Empty the basket</button>
+      <button
+        id="empty-cart"
+        class="w-full py-3 px-4 rounded-[25px] text-lg mt-6 border border-black bg-transparent text-black hover:bg-red-600 hover:text-white transition-all"
+      >
+        Empty the basket
+      </button>
     </div>
     <script>
       // عرض محتوى السلة من localStorage
@@ -113,15 +33,16 @@
       const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
       if (cart.length === 0) {
-        cartItemsDiv.innerHTML = '<div class="empty">The basket is empty</div>';
+        cartItemsDiv.innerHTML =
+          '<div class="text-center text-gray-500">The basket is empty</div>';
         cartTotalDiv.textContent = "";
       } else {
         let total = 0;
         cartItemsDiv.innerHTML = cart
           .map((item) => {
             total += item.price * item.quantity;
-            return `<div class="cart-item">
-      <img src="${item.image}" alt="${item.name}" style="width:60px;height:60px;border-radius:8px;margin-left:12px;">
+            return `<div class="flex justify-between items-center py-4 border-b border-[#e0cda9] text-lg text-black">
+      <img src="${item.image}" alt="${item.name}" class="w-[60px] h-[60px] rounded-md ml-3">
       <span>${item.name}</span>
       <span>Quantity: ${item.quantity}</span>
       <span>the price: ${item.price} DH</span>
@@ -129,7 +50,7 @@
           })
           .join("");
         cartTotalDiv.textContent = `the total: ${total} DH`;
-        cartTotalDiv.className = "cart-total";
+        cartTotalDiv.className = "text-left font-bold mt-8 text-xl text-black";
       }
 
       // زر إفراغ السلة
